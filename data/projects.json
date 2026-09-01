@@ -1,18 +1,21 @@
 [
   {
     "title": "Sample Project One",
+    "slug": "sample-project-one",
     "description": "A short description of project one.",
     "image": "/images/sample1.svg",
     "href": "#"
   },
   {
     "title": "Sample Project Two",
+    "slug": "sample-project-two",
     "description": "A short description of project two.",
     "image": "/images/sample2.svg",
     "href": "#"
   },
   {
     "title": "Local Photo Example",
+    "slug": "local-photo-example",
     "description": "This project uses a photo stored in public/images.",
     "image": "/images/profile.svg",
     "href": "#"

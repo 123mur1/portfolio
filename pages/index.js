@@ -3,6 +3,7 @@ import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import Hero from '../components/Hero'
 import ProjectCard from '../components/ProjectCard'
+import Contact from '../components/Contact'
 import projects from '../data/projects.json'
 
 export default function Home() {
@@ -25,10 +26,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="contact" className="contact">
-          <h2>Contact</h2>
-          <p className="muted">Add your contact details or a contact form here.</p>
-        </section>
+        <Contact />
       </main>
       <Footer />
     </>

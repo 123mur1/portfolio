@@ -9,7 +9,19 @@ body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,'Helveti
 .container{max-width:960px;margin:48px auto;padding:0 16px}
 .nav{background:transparent;padding:16px 0}
 .nav-inner{display:flex;justify-content:space-between;align-items:center}
+.brand-link{color:var(--accent);text-decoration:none}
+.nav-inner{display:flex;justify-content:space-between;align-items:center}
 a{color:var(--accent);text-decoration:none;margin-left:16px}
+nav{display:flex;gap:6px;align-items:center}
+.nav-item{display:inline-flex;align-items:center;gap:8px;padding:6px 10px;border-radius:8px;color:var(--muted);text-decoration:none}
+.nav-item:hover{background:rgba(124,58,237,0.08);color:var(--accent)}
+.nav-icon{width:18px;height:18px;display:inline-block;fill:currentColor}
+.nav-item span{font-size:0.95rem}
+
+@media (max-width:640px){
+  .nav-item span{display:none}
+  .nav{gap:4px}
+}
 .hero h1{font-size:2.2rem;margin:0}
 .footer{margin-top:48px;padding:24px 0;text-align:center;color:var(--muted)}
 
@@ -20,10 +32,49 @@ a{color:var(--accent);text-decoration:none;margin-left:16px}
 
 /* Projects */
 .projects{margin-top:32px}
-.projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:16px}
-.card{background:var(--card);border-radius:10px;overflow:hidden;box-shadow:0 6px 18px rgba(2,6,23,0.6)}
+.projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;margin-top:16px}
+.card{background:var(--card);border-radius:12px;overflow:hidden;box-shadow:0 6px 20px rgba(2,6,23,0.6);transition:transform .18s ease,box-shadow .18s ease}
+.card:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(2,6,23,0.7)}
 .card-link{display:block;color:inherit;text-decoration:none}
-.card-image{width:100%;height:0;padding-bottom:56%;position:relative}
-.card-body{padding:12px}
-.card-body h3{margin:0 0 6px 0}
+.card-image{width:100%;position:relative;aspect-ratio:16/9;background:#071022}
+.card-body{padding:14px}
+.card-body h3{margin:0 0 8px 0;font-size:1.05rem}
+.card-body p{margin:0;color:var(--muted);font-size:0.95rem}
 .muted{color:var(--muted)}
+
+/* Make images crisp on small screens */
+.card-image img{object-fit:cover}
+
+/* Project-only detail view */
+.project-only{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:40px;background:linear-gradient(180deg, #071022 0%, transparent 40%)}
+.project-content{max-width:980px;width:100%;background:transparent}
+.project-back{position:fixed;left:16px;top:16px;background:rgba(255,255,255,0.03);padding:8px 12px;border-radius:8px;color:var(--muted);text-decoration:none}
+.project-back:hover{color:var(--accent);background:rgba(124,58,237,0.08)}
+.project-hero{position:relative;width:100%;height:0;padding-bottom:56%;border-radius:12px;overflow:hidden;background:#071022;margin-top:16px}
+
+@media (max-width:640px){
+  .project-only{padding:18px}
+  .project-hero{padding-bottom:56%}
+}
+
+/* Contact styles */
+.contact{margin-top:32px}
+.contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:14px}
+.contact-item{display:flex;gap:12px;align-items:center;padding:12px;border-radius:10px;background:var(--card);color:inherit;text-decoration:none}
+.contact-item:hover{transform:translateY(-4px);box-shadow:0 10px 30px rgba(2,6,23,0.6)}
+.contact-icon{width:42px;height:42px;display:inline-flex;align-items:center;justify-content:center;border-radius:8px;background:rgba(255,255,255,0.02);color:var(--accent);padding:6px}
+.contact-label{font-weight:600}
+.contact-value{color:var(--muted);font-size:0.95rem}
+
+@media (max-width:640px){
+  .contact-grid{grid-template-columns:repeat(auto-fit,minmax(160px,1fr))}
+  .contact-icon{width:36px;height:36px}
+}
+
+/* Contact-only page */
+.contact-only{min-height:100vh;display:flex;align-items:flex-start;justify-content:center;padding:40px;background:linear-gradient(180deg, #071022 0%, transparent 30%)}
+.contact-content{max-width:920px;width:100%;background:transparent;padding-top:12px}
+
+@media (max-width:640px){
+  .contact-only{padding:18px}
+}

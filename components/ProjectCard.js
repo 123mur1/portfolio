@@ -1,17 +1,19 @@
 import Image from 'next/image'
+import Link from 'next/link'
 
-export default function ProjectCard({ title, description, image, href }) {
+export default function ProjectCard({ title, description, image, href, slug }) {
+  const link = href && href !== '#' ? href : `/projects/${slug || ''}`
   return (
     <article className="card">
-      <a className="card-link" href={href || '#'}>
+      <Link className="card-link" href={link}>
         <div className="card-image">
-          <Image src={image} alt={title} width={800} height={500} />
+          <Image src={image} alt={title} fill style={{ objectFit: 'cover' }} sizes="(max-width:600px) 100vw, 33vw" />
         </div>
         <div className="card-body">
           <h3>{title}</h3>
           <p>{description}</p>
         </div>
-      </a>
+      </Link>
     </article>
   )
 }
