@@ -6,13 +6,13 @@ function Icon({ children }){
   )
 }
 
-export default function Contact(){
+export default function Contact({ showHeading = true }){
   const phoneDigits = contact.whatsapp ? contact.whatsapp.replace(/[^0-9]/g, '') : ''
   const waLink = phoneDigits ? `https://wa.me/${phoneDigits}` : null
 
   return (
     <section id="contact" className="contact">
-      <h2>Contact</h2>
+      {showHeading && <h2>Contact</h2>}
       <p className="muted">Feel free to reach out via any of the channels below.</p>
 
       <div className="contact-grid">

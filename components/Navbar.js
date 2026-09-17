@@ -1,4 +1,6 @@
+import { useState } from 'react'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 
 function IconHome(){
   return (
@@ -32,35 +34,58 @@ function IconGitHub(){
   )
 }
 
+function IconMenu({ open }){
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      {open
+        ? <path d="M6.4 5 5 6.4 10.6 12 5 17.6 6.4 19 12 13.4 17.6 19 19 17.6 13.4 12 19 6.4 17.6 5 12 10.6z" />
+        : <path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z" />}
+    </svg>
+  )
+}
+
 export default function Navbar(){
+  const [open, setOpen] = useState(false)
+  const { pathname } = useRouter()
+
+  const isActive = (href) =>
+    href === '/' ? pathname === '/' : pathname.startsWith(href)
+
+  const close = () => setOpen(false)
+
   return (
     <header className="nav">
       <div className="nav-inner">
-        <div className="brand">
-          <Link href="/" className="brand-link">
-            <strong>Portfolio</strong>
-          </Link>
-        </div>
+        <Link href="/" className="brand-link" onClick={close}>Portfolio</Link>
 
-        <nav>
-          <Link href="/" className="nav-item" aria-label="Home">
-            <IconHome />
-            <span>Home</span>
-          </Link>
+        <button
+          type="button"
+          className="nav-toggle"
+          aria-label={open ? 'Close menu' : 'Open menu'}
+          aria-expanded={open}
+          onClick={() => setOpen((v) => !v)}
+        >
+          <IconMenu open={open} />
+        </button>
 
-          <Link href="/projects" className="nav-item" aria-label="Projects">
-            <IconProjects />
-            <span>Projects</span>
+        <nav className={open ? 'nav-links is-open' : 'nav-links'} aria-label="Primary">
+          <Link href="/" className="nav-item" aria-current={isActive('/') ? 'page' : undefined} onClick={close}>
+            <IconHome /><span>Home</span>
           </Link>
-
-          <Link href="/contact" className="nav-item" aria-label="Contact">
-            <IconContact />
-            <span>Contact</span>
+          <Link href="/projects" className="nav-item" aria-current={isActive('/projects') ? 'page' : undefined} onClick={close}>
+            <IconProjects /><span>Projects</span>
           </Link>
-
-          <a className="nav-item" href="https://github.com/123mur1" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-            <IconGitHub />
-            <span>GitHub</span>
+          <Link href="/contact" className="nav-item" aria-current={isActive('/contact') ? 'page' : undefined} onClick={close}>
+            <IconContact /><span>Contact</span>
+          </Link>
+          <a
+            className="nav-item"
+            href="https://github.com/123mur1"
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={close}
+          >
+            <IconGitHub /><span>GitHub</span>
           </a>
         </nav>
       </div>

@@ -8,19 +8,20 @@ export default function ProjectsIndex(){
   return (
     <>
       <Head>
-        <title>Projects — Portfolio</title>
+        <title>Projects — MUROKORE Patrick</title>
+        <meta name="description" content="Projects built by MUROKORE Patrick." />
       </Head>
 
       <Navbar />
 
-      <main className="container">
-        <section className="projects">
+      <main id="main" className="container">
+        <section className="projects" style={{ marginTop: 0 }}>
           <h1>Projects</h1>
-          <p className="muted">A selection of projects I've worked on.</p>
+          <p className="muted">A selection of projects I&apos;ve worked on. Click any card for details.</p>
 
-          <div style={{marginTop:16}} className="projects-grid">
+          <div className="projects-grid">
             {projects.map((p) => (
-              <ProjectCard key={p.slug} {...p} />
+              <ProjectCard key={p.slug || p.title} {...p} />
             ))}
           </div>
         </section>

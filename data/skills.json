@@ -1,0 +1,16 @@
+{
+  "frontend": [
+    { "name": "Next.js", "short": "N" },
+    { "name": "React", "short": "R" },
+    { "name": "JavaScript", "short": "JS" },
+    { "name": "HTML5", "short": "H" },
+    { "name": "CSS3", "short": "C" }
+  ],
+  "backend": [
+    { "name": "Node.js", "short": "N" },
+    { "name": "Nest.js", "short": "NE" }
+  ],
+  "database": [
+    { "name": "PostgreSQL", "short": "Pg" }
+  ]
+}

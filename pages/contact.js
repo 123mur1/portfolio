@@ -1,22 +1,29 @@
 import Head from 'next/head'
 import Link from 'next/link'
+import Navbar from '../components/Navbar'
+import Footer from '../components/Footer'
 import Contact from '../components/Contact'
 
 export default function ContactPage(){
   return (
     <>
       <Head>
-        <title>Contact — Portfolio</title>
+        <title>Contact — MUROKORE Patrick</title>
+        <meta name="description" content="Get in touch with MUROKORE Patrick." />
       </Head>
 
-      <div className="contact-only">
-        <Link href="/" className="project-back">← Back</Link>
+      <Navbar />
 
-        <div className="contact-content container">
-          <h1>Contact</h1>
-          <Contact />
+      <main id="main" className="container">
+        <div className="page-head">
+          <Link href="/" className="back-link"><span aria-hidden="true">←</span> Home</Link>
         </div>
-      </div>
+
+        <h1>Contact</h1>
+        <Contact showHeading={false} />
+      </main>
+
+      <Footer />
     </>
   )
 }

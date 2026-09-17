@@ -1,23 +1,37 @@
 [
   {
-    "title": "Sample Project One",
-    "slug": "sample-project-one",
-    "description": "A short description of project one.",
-    "image": "/images/sample1.svg",
+    "title": "Smart campus restraunt",
+    "slug": "project 1",
+    "description": "system used by student to access meal without traditional way of sign in in the books",
+    "images": [
+      "/images/screen1.png",
+      "/images/screen2.png",
+      "/images/screen4.png",
+      "/images/screen5.png"
+    ],
+    "tags": ["Next.js"],
+    "details": "Students tap in to claim a meal instead of signing a paper ledger. And this lead to time waste,long queue and some human errors involve, so we design this to make  sure all problem mentioned arer solved by creating this system, by sing different technology .",
     "href": "#"
   },
   {
-    "title": "Sample Project Two",
-    "slug": "sample-project-two",
-    "description": "A short description of project two.",
-    "image": "/images/sample2.svg",
+    "title": "econext platform",
+    "slug": "project 2",
+    "description": "A bridge between seller and buyer for second hand products ",
+    "images": [
+      "/images/screen11.png",
+      "/images/screen12.png",
+      "/images/screen13.png",
+      "/images/screen14.png"
+    ],
+    "tags": ["Next.js"],
     "href": "#"
+
   },
   {
-    "title": "Local Photo Example",
-    "slug": "local-photo-example",
-    "description": "This project uses a photo stored in public/images.",
-    "image": "/images/profile.svg",
+    "title": "patrick murokore",
+    "slug": "front-end developer",
+    
+    "image": "/images/murokore.jpg",
     "href": "#"
   }
 ]
